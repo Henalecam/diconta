@@ -316,8 +316,8 @@ export default function Clientes() {
               </h3>
               <div className="flex space-x-4">
                 <div className="relative">
-                  <input
-                    type="text"
+          <input
+            type="text"
                     placeholder="Buscar cliente..."
                     className="pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 dark:text-white"
                     value={searchTerm}
@@ -337,23 +337,23 @@ export default function Clientes() {
                 </select>
               </div>
             </div>
-          </div>
+        </div>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
               <thead className="bg-gray-50 dark:bg-gray-900">
                 <tr>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Cliente
-                  </th>
+                </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                    CNPJ
-                  </th>
+                  CNPJ
+                </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Segmento
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                    Status
-                  </th>
+                  Status
+                </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Satisfação
                   </th>
@@ -362,12 +362,12 @@ export default function Clientes() {
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Próximo Contato
-                  </th>
+                </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Valor Contrato
-                  </th>
-                </tr>
-              </thead>
+                </th>
+              </tr>
+            </thead>
               <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
                 {clientes.map((cliente) => (
                   <tr key={cliente.id}>
@@ -376,19 +376,19 @@ export default function Clientes() {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                       {cliente.cnpj}
-                    </td>
+                  </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                       {cliente.segmento}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                         cliente.status === 'Ativo'
                           ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
                           : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'
                       }`}>
                         {cliente.status}
-                      </span>
-                    </td>
+                    </span>
+                  </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
                         <StarIcon className="h-4 w-4 text-yellow-400 mr-1" />
@@ -402,14 +402,14 @@ export default function Clientes() {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                       {cliente.proximoContato}
-                    </td>
+                  </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
                       {cliente.valorContrato}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
           </div>
         </div>
       </div>
