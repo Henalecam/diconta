@@ -25,8 +25,30 @@ import {
   Cell,
 } from 'recharts';
 
+// Tipos para os dados
+type ReconciliationData = {
+  id: number;
+  date: string;
+  description: string;
+  bankValue: number;
+  systemValue: number;
+  status: 'conciliado' | 'pendente';
+  type: 'entrada' | 'saida';
+};
+
+type MonthlyBalanceData = {
+  name: string;
+  saldo: number;
+  conciliado: number;
+};
+
+type StatusData = {
+  name: string;
+  value: number;
+};
+
 // Dados de exemplo
-const reconciliationData = [
+const reconciliationData: ReconciliationData[] = [
   {
     id: 1,
     date: '2024-03-01',
@@ -56,7 +78,7 @@ const reconciliationData = [
   },
 ];
 
-const monthlyBalanceData = [
+const monthlyBalanceData: MonthlyBalanceData[] = [
   { name: 'Jan', saldo: 4000, conciliado: 3800 },
   { name: 'Fev', saldo: 3000, conciliado: 2800 },
   { name: 'Mar', saldo: 2000, conciliado: 1500 },
@@ -65,7 +87,7 @@ const monthlyBalanceData = [
   { name: 'Jun', saldo: 2390, conciliado: 2000 },
 ];
 
-const statusData = [
+const statusData: StatusData[] = [
   { name: 'Conciliados', value: 75 },
   { name: 'Pendentes', value: 25 },
 ];
