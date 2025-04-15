@@ -22,6 +22,7 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  Cell,
 } from 'recharts';
 
 // Dados de exemplo
@@ -214,13 +215,14 @@ export default function Conciliacao() {
                   <YAxis />
                   <Tooltip />
                   <Legend />
-                  <Bar
-                    dataKey="value"
-                    fill={(entry) =>
-                      entry.name === 'Conciliados' ? '#22C55E' : '#EF4444'
-                    }
-                    name="Quantidade"
-                  />
+                  <Bar dataKey="value" name="Quantidade">
+                    {statusData.map((entry, index) => (
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={entry.name === 'Conciliados' ? '#22C55E' : '#EF4444'}
+                      />
+                    ))}
+                  </Bar>
                 </BarChart>
               </ResponsiveContainer>
             </div>
